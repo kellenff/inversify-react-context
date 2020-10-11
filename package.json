@@ -1,0 +1,9 @@
+{
+  "name": "inversify-react-context",
+  "version": "0.1.0",
+  "description": "Simple context provider and hooks for inversify",
+  "repository": "https://github.com/rakenodiax/inversify-react-context",
+  "author": "Kellen Frodelius-Fujimoto <kellen@kellenfujimoto.com>",
+  "license": "MIT",
+  "private": false
+}
