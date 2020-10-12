@@ -14,6 +14,7 @@ describe('injection hook', () => {
     identifier = Symbol('name');
 
     container.bind<string>(identifier).toConstantValue('world');
+    // eslint-disable-next-line react/display-name
     Component = () => {
       const value = useInjection<string>(identifier);
 
@@ -32,6 +33,7 @@ describe('injection hook', () => {
           tree     = rendered.toJSON();
 
     expect(tree).toMatchSnapshot();
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     expect(tree?.children).toEqual(['world']);
   });

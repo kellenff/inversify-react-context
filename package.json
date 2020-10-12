@@ -21,19 +21,23 @@
     "react hook"
   ],
   "private": false,
-  "main": "dist/index",
-  "typings": "dist/index",
+  "main": "dist/index.jsx",
+  "typings": "dist/index.d.ts",
   "files": [
     "dist/index.jsx",
     "dist/index.jsx.map",
     "dist/index.d.ts"
   ],
   "scripts": {
-    "prepublishOnly": "npm run compile",
-    "compile": "npm run clean && tsc -p .",
+    "prepublish": "yarn run compile",
+    "compile": "yarn run clean && yarn build",
+    "build": "tsc -p .",
     "watch": "tsc -w -p .",
     "clean": "rm -rf dist",
-    "test": "jest"
+    "test": "jest",
+    "pre-commit": "yarn test",
+    "lint": "eslint --format unix --ext ts,tsx",
+    "lint-project": "eslint --format unix --ext ts,tsx ."
   },
   "devDependencies": {
     "@babel/preset-env": "^7.11.5",
@@ -42,8 +46,13 @@
     "@types/jest": "^26.0.14",
     "@types/react": "^16.9.52",
     "@types/react-test-renderer": "^16.9.3",
+    "@typescript-eslint/eslint-plugin": "^4.4.0",
+    "@typescript-eslint/parser": "^4.4.0",
     "babel-jest": "^26.5.2",
     "eslint": "^7.11.0",
+    "eslint-config-react": "^1.1.7",
+    "eslint-plugin-react": "^7.21.4",
+    "husky": "^4.3.0",
     "jest": "^26.5.3",
     "react-test-renderer": "^16.13.1",
     "ts-jest": "^26.4.1",
