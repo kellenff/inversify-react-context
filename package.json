@@ -21,16 +21,17 @@
     "react hook"
   ],
   "private": false,
-  "main": "dist/index",
-  "typings": "dist/index",
+  "main": "dist/index.jsx",
+  "typings": "dist/index.d.ts",
   "files": [
     "dist/index.jsx",
     "dist/index.jsx.map",
     "dist/index.d.ts"
   ],
   "scripts": {
-    "prepublishOnly": "npm run compile",
-    "compile": "npm run clean && tsc -p .",
+    "prepublish": "yarn run compile",
+    "compile": "yarn run clean && yarn build",
+    "build": "tsc -p .",
     "watch": "tsc -w -p .",
     "clean": "rm -rf dist",
     "test": "jest",
